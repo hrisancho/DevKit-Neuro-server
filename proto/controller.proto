@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option optimize_for = LITE_RUNTIME;
+option cc_enable_arenas = false;
+
+package controller;
+option go_package = "DevKit-Neuro-server/proto/controller";
+
+message ChannelsDataSet{
+  double channel1 = 1;
+  double channel2 = 2;
+  double channel3 = 3;
+  double channel4 = 4;
+  double channel5 = 5;
+  double channel6 = 6;
+  double channel7 = 7;
+  double channel8 = 8;
+  uint64 id = 9;
+}
+
+message RawDataPack{
+  repeated ChannelsDataSet data_mes = 1;
+}
+
+message EmgMetric{
+  ChannelsDataSet metrics = 1;
+}
